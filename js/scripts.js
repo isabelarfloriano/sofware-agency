@@ -80,4 +80,22 @@ $(document).ready( function() {
 
   });
 
+    let dataAreaOffset = $('#data-area').offset();
+    let stop = 0;
+  
+    $(window).scroll(function (e) {
+  
+      let scroll = $(window).scrollTop();
+  
+      if(scroll > (dataAreaOffset.top - 500) && stop == 0) {
+        circleA.animate(1.0);
+        circleB.animate(1.0);
+        circleC.animate(1.0);
+        circleD.animate(1.0);
+  
+        stop = 1;
+      }
+  
+    });
+
 });
