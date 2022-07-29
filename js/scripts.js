@@ -60,4 +60,24 @@ $(document).ready( function() {
 
   });
 
+  let containerD = document.getElementById("circleD");
+
+  let circleD = new ProgressBar.Circle(containerD, {
+
+    color: '#65DAF9',
+    strokeWidth: 8,
+    duration: 2000,
+    from: { color: '#aaa'},
+    to: { color: '#65DAF9'},
+
+    step: function(state, circle) {
+      circle.path.setAttribute('stroke', state.color);
+
+      var value = Math.round(circle.value() * 5423);
+      circle.setText(value);
+
+    }
+
+  });
+
 });
